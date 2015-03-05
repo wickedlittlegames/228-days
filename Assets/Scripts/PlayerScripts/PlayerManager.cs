@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerManager : MonoBehaviour {
 
 	NavMeshAgent _navMeshAgent;
-	public bool active;
+	public bool active = false;
 	public Character currentCharacter;
 
 	// Use this for initialization
@@ -20,7 +20,7 @@ public class PlayerManager : MonoBehaviour {
 	}
 
 	void ClickToMove(bool clicked = false) {
-		if (clicked) {
+		if (clicked && currentCharacter.Energy>0) {
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			
@@ -31,7 +31,7 @@ public class PlayerManager : MonoBehaviour {
 
 		// If player is moving
 		if (_navMeshAgent.velocity != Vector3.zero) {
-			currentCharacter.Energy -= 0.05f;
+			currentCharacter.Energy -= 1f;
 		}
 	}
 

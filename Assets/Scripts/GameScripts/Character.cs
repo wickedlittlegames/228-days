@@ -4,11 +4,9 @@ using System.Collections;
 [System.Serializable]
 public class Character {
 
-	public string Name;
-	public float Health;
-	public float Energy;
+	public string 	Name;
+	public string 	Job;
+	public float 	Energy;
 
-	public Character() {
-		this.Name = "";
-	}
+	public Character() {}
 }
