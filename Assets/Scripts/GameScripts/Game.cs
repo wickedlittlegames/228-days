@@ -6,10 +6,11 @@ using System.Runtime.Serialization.Formatters.Binary;
 [System.Serializable]
 public class Game {
 
-	public static Game current;
 	public static List<Character> characterList = new List<Character>();
 
 	public Game() {
+		Debug.Log ("Game Init");
+
 		Character captain = new Character();
 		captain.Name = "Todd Toddson";
 		captain.Energy = 100.0f;

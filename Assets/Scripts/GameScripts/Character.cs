@@ -9,7 +9,9 @@ public class Character {
 	public int		Tag;
 	public bool 	Active;
 
-	public Character() {}
+	public Character() {
+		Debug.Log ("Character Init");
+	}
 
 	public void ReduceEnergy(float amount) {
 		this.Energy -= amount;
