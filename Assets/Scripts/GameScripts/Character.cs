@@ -8,6 +8,7 @@ public class Character {
 	public float 	Energy;
 	public int		Tag;
 	public bool 	Active;
+	public Vector3  StartPosition;
 
 	public Character() {
 		Debug.Log ("Character Init");

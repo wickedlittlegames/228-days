@@ -10,6 +10,7 @@ public class SceneManager : MonoBehaviour {
 
 		foreach(Character character in Game.characterList) {
 			playerPrefab.GetComponent<PlayerManager>().currentCharacter = character;
+			playerPrefab.transform.position = character.StartPosition;
 			Instantiate(playerPrefab);
 		}
 	}
