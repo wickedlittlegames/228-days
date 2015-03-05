@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlanetSpin : MonoBehaviour {
+public class OrbitalSpin : MonoBehaviour {
 
 	public float speed = 2f;
 	

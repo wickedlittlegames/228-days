@@ -6,19 +6,18 @@ public class SceneManager : MonoBehaviour {
 	public GameObject playerPrefab;
 
 	void Awake() {
-		playerPrefab.GetComponent<PlayerManager>().currentCharacter.Energy = 100.0f;
-		playerPrefab.GetComponent<PlayerManager>().currentCharacter.Name = "Todd Toddson";
-		playerPrefab.GetComponent<PlayerManager>().currentCharacter.Job  = "Engineer";
-		playerPrefab.GetComponent<PlayerManager>().active = true;
-		Instantiate(playerPrefab);
-	}
+		new Game();
 
-	// Use this for initialization
+		foreach(Character character in Game.characterList) {
+			playerPrefab.GetComponent<PlayerManager>().currentCharacter = character;
+			Instantiate(playerPrefab);
+		}
+	}
+	
 	void Start () {
 	
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 	}

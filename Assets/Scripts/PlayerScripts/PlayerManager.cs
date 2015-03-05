@@ -4,38 +4,33 @@ using System.Collections;
 public class PlayerManager : MonoBehaviour {
 
 	NavMeshAgent _navMeshAgent;
-	public bool active = false;
 	public Character currentCharacter;
 
-	// Use this for initialization
-	void Start () {
+	void Awake () {
 		_navMeshAgent = GetComponent<NavMeshAgent>();
 	}
 	
-	// Update is called once per frame
 	void Update () {
-		if ( active ) {
-			this.ClickToMove(Input.GetMouseButtonDown (0));
-		}
-	}
-
-	void ClickToMove(bool clicked = false) {
-		if (clicked && currentCharacter.Energy>0) {
-			RaycastHit hit;
-			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-			
-			if (Physics.Raycast (ray, out hit, 1000)) {
-				_navMeshAgent.SetDestination (hit.point);
+		if ( currentCharacter.Active ) {
+			if ( Input.GetMouseButtonDown (0) ) {
+				this.Move();
 			}
-		}
-
-		// If player is moving
-		if (_navMeshAgent.velocity != Vector3.zero) {
-//			currentCharacter.Energy -= 1f;
+			this.CheckStats();
 		}
 	}
 
-	void ToggleActive() {
-		this.active = !this.active;
+	void Move() {
+		RaycastHit hit;
+		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+		
+		if (Physics.Raycast (ray, out hit, 1000)) {
+			_navMeshAgent.SetDestination (hit.point);
+		}
+	}
+
+	void CheckStats() {
+		if (_navMeshAgent.velocity != Vector3.zero) {
+			currentCharacter.Energy -= 0.005f;
+		}
 	}
 }

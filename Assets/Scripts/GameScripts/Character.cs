@@ -5,8 +5,9 @@ using System.Collections;
 public class Character {
 
 	public string 	Name;
-	public string 	Job;
 	public float 	Energy;
+	public int		Tag;
+	public bool 	Active;
 
 	public Character() {}
 }
