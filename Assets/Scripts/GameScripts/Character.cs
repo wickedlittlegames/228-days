@@ -10,4 +10,14 @@ public class Character {
 	public bool 	Active;
 
 	public Character() {}
+
+	public void ReduceEnergy(float amount) {
+		this.Energy -= amount;
+	}
+	public void IncreaseEnergy(float amount) {
+		this.Energy += amount;
+	}
+	public bool HasEnoughEnergy(float required) {
+		return (this.Energy >= required);
+	}
 }

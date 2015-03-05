@@ -30,7 +30,7 @@ public class PlayerManager : MonoBehaviour {
 
 	void CheckStats() {
 		if (_navMeshAgent.velocity != Vector3.zero) {
-			currentCharacter.Energy -= 0.005f;
+			currentCharacter.ReduceEnergy(0.05f);
 		}
 	}
 }
