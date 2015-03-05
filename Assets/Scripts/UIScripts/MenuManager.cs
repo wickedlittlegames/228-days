@@ -8,7 +8,6 @@ public class MenuManager : MonoBehaviour {
 	}
 
 	public void ChangeActiveCharacter(int CharacterToChangeTo) {
-
 		foreach (GameObject character in GameObject.FindGameObjectsWithTag("Player")) {
 			int tag = character.GetComponent<PlayerManager>().currentCharacter.Tag;
 			bool activeChoice = (tag == CharacterToChangeTo);
