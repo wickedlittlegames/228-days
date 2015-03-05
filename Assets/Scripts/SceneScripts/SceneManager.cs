@@ -3,8 +3,10 @@ using System.Collections;
 
 public class SceneManager : MonoBehaviour {
 
-	void Awake() {
+	public GameObject playerPrefab;
 
+	void Awake() {
+		Instantiate(playerPrefab);
 	}
 
 	// Use this for initialization

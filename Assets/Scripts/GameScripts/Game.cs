@@ -6,11 +6,11 @@ public class Game {
 
 	public static Game current;
 	public int dayNumber;
-	public Character captain;
+	public Character player;
 
 	public Game() {
-		captain = new Character();
-		captain.Energy = 200.0f;
+		player = new Character();
+		player.Energy = 200.0f;
 		dayNumber = 1;
 	}
 }

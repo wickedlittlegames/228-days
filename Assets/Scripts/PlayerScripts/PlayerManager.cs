@@ -10,7 +10,6 @@ public class PlayerManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_navMeshAgent = GetComponent<NavMeshAgent>();
-		currentCharacter = Game.current.captain;
 	}
 	
 	// Update is called once per frame
