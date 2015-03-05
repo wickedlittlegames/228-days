@@ -10,6 +10,7 @@ public class Game {
 
 	public Game() {
 		player = new Character();
+		player.Name = "Captain!";
 		player.Energy = 200.0f;
 		dayNumber = 1;
 	}

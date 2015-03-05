@@ -6,6 +6,8 @@ public class SceneManager : MonoBehaviour {
 	public GameObject playerPrefab;
 
 	void Awake() {
+		playerPrefab.GetComponent<PlayerManager>().currentCharacter.Energy = 100.0f;
+		playerPrefab.GetComponent<PlayerManager>().currentCharacter.Name = "Todd Toddson";
 		Instantiate(playerPrefab);
 	}
 
