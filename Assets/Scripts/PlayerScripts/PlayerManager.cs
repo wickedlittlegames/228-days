@@ -5,10 +5,12 @@ public class PlayerManager : MonoBehaviour {
 
 	NavMeshAgent _navMeshAgent;
 	public bool active;
+	public Character currentCharacter;
 
 	// Use this for initialization
 	void Start () {
 		_navMeshAgent = GetComponent<NavMeshAgent>();
+		currentCharacter = Game.current.captain;
 	}
 	
 	// Update is called once per frame
@@ -29,7 +31,9 @@ public class PlayerManager : MonoBehaviour {
 		}
 
 		// If player is moving
-		if (_navMeshAgent.velocity != Vector3.zero) {}
+		if (_navMeshAgent.velocity != Vector3.zero) {
+			currentCharacter.Energy -= 0.05f;
+		}
 	}
 
 	void ToggleActive() {
