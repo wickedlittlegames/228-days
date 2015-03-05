@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ObjectHoverGlow : MonoBehaviour {
+public class InteractiveHoverGlow : MonoBehaviour {
 
 	Color originalColor;
 	public Color highlightColor;

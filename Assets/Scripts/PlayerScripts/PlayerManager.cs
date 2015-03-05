@@ -31,7 +31,7 @@ public class PlayerManager : MonoBehaviour {
 
 		// If player is moving
 		if (_navMeshAgent.velocity != Vector3.zero) {
-			currentCharacter.Energy -= 1f;
+//			currentCharacter.Energy -= 1f;
 		}
 	}
 
