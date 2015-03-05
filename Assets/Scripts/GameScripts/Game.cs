@@ -24,7 +24,5 @@ public class Game {
 
 		characterList.Add(captain);
 		characterList.Add(engineer);
-
-		Debug.Log ("Initiated Game");
 	}
 }
