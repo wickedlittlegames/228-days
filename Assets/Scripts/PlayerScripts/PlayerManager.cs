@@ -5,9 +5,15 @@ public class PlayerManager : MonoBehaviour {
 	
 	public Character currentCharacter;
 	NavMeshAgent _navMeshAgent;
+	Color originalColor;
 
 	void Awake () {
 		_navMeshAgent = GetComponent<NavMeshAgent>();
+		originalColor = GetComponent<Renderer> ().material.color;
+	}
+
+	void Start() {
+		this._Highlight(currentCharacter.Active);
 	}
 	
 	void Update () {
@@ -36,5 +42,13 @@ public class PlayerManager : MonoBehaviour {
 
 	bool isMoving() {
 		return (_navMeshAgent.velocity != Vector3.zero);
+	}
+
+	public void _Highlight(bool isActive) {
+		if(isActive) {
+			GetComponent<Renderer>().material.color = Color.red;
+		} else {
+			GetComponent<Renderer>().material.color = originalColor;
+		}
 	}
 }

@@ -13,6 +13,7 @@ public class MenuManager : MonoBehaviour {
 			bool activeChoice = (tag == CharacterToChangeTo);
 
 			character.GetComponent<PlayerManager>().currentCharacter.Active = activeChoice;
+			character.GetComponent<PlayerManager>()._Highlight(activeChoice);
 		}
 	}
 }
