@@ -8,7 +8,7 @@ public class SaveLoad {
 
 	public static List<Game> savedGames = new List<Game>();
 	
-	public static void Save() {
+	public static void Save(Game savedGame) {
 //		savedGames.Add(new Game());
 //		BinaryFormatter bf = new BinaryFormatter();
 //		FileStream file = File.Create (Application.persistentDataPath + "/savedGames.gd");
@@ -16,12 +16,14 @@ public class SaveLoad {
 //		file.Close();
 	}
 
-	public static void Load() {
+	public static Game Load() {
 //		if(File.Exists(Application.persistentDataPath + "/savedGames.gd")) {
 //			BinaryFormatter bf = new BinaryFormatter();
 //			FileStream file = File.Open(Application.persistentDataPath + "/savedGames.gd", FileMode.Open);
 //			SaveLoad.savedGames = (List<Game>)bf.Deserialize(file);
 //			file.Close();
 //		}
+
+		return new Game();
 	}
 }

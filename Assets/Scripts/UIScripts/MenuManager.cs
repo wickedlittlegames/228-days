@@ -16,4 +16,18 @@ public class MenuManager : MonoBehaviour {
 			character.GetComponent<PlayerManager>()._Highlight(activeChoice);
 		}
 	}
+
+	public void NewGame() {
+		// Make a new Game
+		Application.LoadLevel(1);
+	}
+
+	public void SaveGame() {
+
+	}
+
+	public void LoadGame() {
+		// Load an existing game!
+		Application.LoadLevel(1);
+	}
 }

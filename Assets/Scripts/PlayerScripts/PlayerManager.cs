@@ -22,6 +22,7 @@ public class PlayerManager : MonoBehaviour {
 				this.Move();
 			}
 			this.CheckStats();
+			this.SaveLocation();
 		}
 	}
 
@@ -29,6 +30,10 @@ public class PlayerManager : MonoBehaviour {
 		if (this.isMoving()) {
 			currentCharacter.ReduceEnergy(0.05f);
 		}
+	}
+
+	void SaveLocation() {
+		this.currentCharacter.StartPosition = transform.position;
 	}
 
 	void Move() {
